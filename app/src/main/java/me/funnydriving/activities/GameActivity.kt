@@ -31,13 +31,12 @@ class GameActivity : AppCompatActivity(),GameRules {
 
     override fun finishGame(score: Int) {
         val highScore = sharedPreferenceInstance.getHighScore()
-        val lastScore = sharedPreferenceInstance.getScore()
 
         if (score > highScore){
             sharedPreferenceInstance.saveHighScore(score)
+        }else{
+            sharedPreferenceInstance.saveScore(score = score)
         }
-        sharedPreferenceInstance.saveScore(score = score)
-        val intent = Intent(this@GameActivity,MainActivity::class.java)
-        startActivity(intent)
+        finish()
     }
 }

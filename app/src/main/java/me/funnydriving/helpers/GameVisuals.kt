@@ -90,7 +90,8 @@ class GameVisuals(private val ctx:Context, private val gameRules: GameRules):Vie
         canvas.drawText("Счёт : $score",80f,80f, painter!!)
         canvas.drawText("Скорость : $gameSpeed",380f,80f, painter!!)
         if (isFinished){
-            canvas.drawText("Игра окончена!!!",380f,880f, painter!!)
+            painter!!.textSize = 100f
+            canvas.drawText("Игра окончена!!!",250f,880f, painter!!)
         }
         invalidate()
     }
