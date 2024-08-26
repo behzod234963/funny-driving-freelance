@@ -2,6 +2,7 @@ package me.funnydriving.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import me.funnydriving.databinding.ActivityGameBinding
 import me.funnydriving.helpers.GameRules
@@ -34,9 +35,10 @@ class GameActivity : AppCompatActivity(),GameRules {
 
         if (score > highScore){
             sharedPreferenceInstance.saveHighScore(score)
-        }else{
-            sharedPreferenceInstance.saveScore(score = score)
         }
-        finish()
+        sharedPreferenceInstance.saveScore(score = score)
+        Handler().postDelayed({
+            finish()
+        },1500)
     }
 }
