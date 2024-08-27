@@ -1,6 +1,7 @@
 package me.funnydriving.local
 
 import android.content.Context
+import android.content.SharedPreferences
 
 class SharedPreferenceInstance(private val ctx:Context) {
 
